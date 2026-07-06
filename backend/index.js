@@ -14,7 +14,7 @@ dotenv.config();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://realchat-frontend-dtgn.onrender.com",
     credentials: true,
   })
 );
