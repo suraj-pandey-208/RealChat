@@ -72,7 +72,6 @@ const SideBar = () => {
     return () => clearTimeout(timer);
   }, [input]);
 
-  // search karte waqt sab users (online + offline) dikhao
   const listToShow = input.trim() !== "" ? searchResults : otherUsers;
 
   return (
@@ -81,9 +80,8 @@ const SideBar = () => {
         !selectedUser ? "block" : "hidden"
       }`}
     >
-      {/* Header */}
       <div className="w-full h-[220px]  from bg-black shadow-gray-400 shadow-lg p-4 ">
-        <h1 className="text-white font-bold text-[30px] mt-8 items-center">Chatly</h1>
+        <h1 className="text-white font-bold text-[30px] mt-8 items-center">RealChat</h1>
 
         <div className="flex justify-between items-center mt-4">
           <h1 className="text-black text-[18px] font-semibold text-white ">
@@ -163,7 +161,6 @@ const SideBar = () => {
         )}
       </div>
 
-      {/* Logout Button */}
       <div
         onClick={handleLogout}
         className="fixed bottom-5 left-5 w-[55px] h-[55px] rounded-full bg-blue-900 flex justify-center items-center shadow-lg cursor-pointer hover:scale-110 transition z-50"
