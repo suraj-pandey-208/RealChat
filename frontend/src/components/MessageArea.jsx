@@ -97,7 +97,6 @@ const MessageArea = () => {
     });
   }, [messages]);
 
-  // Click outside handler for emoji picker
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -121,7 +120,6 @@ const MessageArea = () => {
     };
   }, []);
 
-  // Socket listener for incoming real-time messages
   useEffect(() => {
     if (!socket) return;
 
@@ -178,7 +176,6 @@ const MessageArea = () => {
             </h1>
           </div>
 
-          {/* Messages */}
           <div className="flex-1 overflow-y-auto p-5 flex flex-col gap-3 scroll-smooth [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full">
             {messages.map((msg) =>
               msg.sender === userData?._id ? (
@@ -199,7 +196,6 @@ const MessageArea = () => {
             <div ref={messagesEndRef}></div>
           </div>
 
-          {/* Emoji Picker */}
           {showPicker && (
             <div
               ref={pickerRef}
@@ -214,7 +210,6 @@ const MessageArea = () => {
             </div>
           )}
 
-          {/* Image Preview */}
           {frontendImage && (
             <div className="px-5 pb-3">
               <div className="relative w-fit ml-auto">
@@ -238,7 +233,6 @@ const MessageArea = () => {
             </div>
           )}
 
-          {/* Input */}
           <div className="w-full p-4 border-t border-white/10">
             <form
               onSubmit={handleSendMessage}
