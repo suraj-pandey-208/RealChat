@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
-    email: {                     // ✅ ADD THIS
+    email:{ 
         type: String,
         unique: true,
         required: true
@@ -17,14 +17,13 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-        // ❌ unique हटाओ (password unique नहीं होना चाहिए)
     },
     image: {
         type: String,
         default: ""
     }
 
-}, { timestamps: true });
+},{timestamps: true });
 
 const User = mongoose.model("User", userSchema);
 
