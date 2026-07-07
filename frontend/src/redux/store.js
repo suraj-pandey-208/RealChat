@@ -14,7 +14,6 @@ import {
 import userSlice from "./userSlice";
 import messageSlice from "./messageSlice";
 
-// localStorage
 const storage = {
   getItem: (key) => Promise.resolve(localStorage.getItem(key)),
   setItem: (key, value) =>
@@ -23,7 +22,6 @@ const storage = {
     Promise.resolve(localStorage.removeItem(key)),
 };
 
-// socket ko persist hone se rok do
 const socketTransform = createTransform(
   (inboundState) => {
     return {
