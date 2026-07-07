@@ -63,7 +63,7 @@ function Login() {
 
         <div className="w-full h-[180px] bg-gradient-to-br from-cyan-500 to-sky-700 flex items-center justify-center shadow-lg shadow-cyan-900/40">
           <h1 className="text-white/90 font-bold text-2xl tracking-wide">
-            Welcome to <span className="text-white font-extrabold">ChatKaro</span>
+            Welcome to <span className="text-white font-extrabold">RealChat</span>
           </h1>
         </div>
 
