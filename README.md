@@ -1,5 +1,4 @@
- Real-Time Chat Application
-
+  REALCHAT;- 
 A  full-stack real-time chat application built using the MERN Stack. The application enables secure one-to-one communication through JWT-based authentication and Socket.IO while providing a responsive and intuitive user experience.
 
 Overview
