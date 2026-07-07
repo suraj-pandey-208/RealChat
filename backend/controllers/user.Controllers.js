@@ -1,7 +1,6 @@
 import User from "../models/userModel.js";
 import uploadOnCloudinary from "../config/cloudinary.js";
 
-// GET CURRENT USER
 export const getCurrentUser = async (req, res) => {
   try {
     const user = await User.findById(req.userId).select("-password");
@@ -27,7 +26,6 @@ export const getCurrentUser = async (req, res) => {
   }
 };
 
-// EDIT PROFILE
 export const editProfile = async (req, res) => {
   try {
     console.log("BODY =", req.body);
@@ -45,7 +43,7 @@ export const editProfile = async (req, res) => {
       updateData.image = image;
     }
 
-    console.log("UPDATE DATA =", updateData);
+    console.log("UPDATE DATA=", updateData);
 
     const updatedUser = await User.findByIdAndUpdate(
       req.userId,
@@ -75,7 +73,6 @@ export const editProfile = async (req, res) => {
   }
 };
 
-// GET OTHER USERS
 export const getOtherUsers = async (req, res) => {
   try {
     const users = await User.find({
@@ -93,24 +90,23 @@ export const getOtherUsers = async (req, res) => {
   }
 };
 
-//SEARCH USERS
 export const search = async (req, res) => {
   try {
-    const { query } = req.query;
+    const {query} = req.query;
 
-    if (!query) {
-      return res.status(400).json({ message: "query is required" });
+    if (!query){
+      return res.status(400).json({ message:"query is required" });
     }
 
     const users = await User.find({
-      $or: [
-        { name: { $regex: query, $options: "i" } },
-        { userName: { $regex: query, $options: "i" } },
+      $or:[
+        {name: {$regex: query, $options: "i"}},
+        {userName: { $regex: query, $options: "i" }},
       ],
     });
 
     return res.status(200).json(users);
   } catch (error) {
-    return res.status(500).json({ message: `search user others ${error}` });
+    return res.status(500).json({ message:`search user others ${error}`});
   }
 };
