@@ -66,7 +66,6 @@ function Signup() {
     <div className="w-full min-h-screen bg-[#0f172a] flex items-center justify-center px-5">
       <div className="w-full max-w-[550px] bg-[#1e293b] rounded-xl overflow-hidden shadow-2xl">
 
-        {/* Header */}
 
         <div className="w-full h-[180px] bg-cyan-600 flex items-center justify-center">
           <h1 className="text-4xl font-bold text-white">
@@ -74,7 +73,6 @@ function Signup() {
           </h1>
         </div>
 
-        {/* Form */}
 
         <form
           onSubmit={handleSignup}
