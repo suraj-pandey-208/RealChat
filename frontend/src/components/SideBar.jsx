@@ -46,7 +46,6 @@ const SideBar = () => {
     }
   };
 
-  // debounced search — input badalne ke 400ms baad hi API call
   useEffect(() => {
     if (input.trim() === "") {
       setSearchResults([]);
@@ -99,7 +98,6 @@ const SideBar = () => {
           </div>
         </div>
 
-        {/* Search - hamesha khula hua */}
         <form className="w-full h-[55px] mt-5 bg-white rounded-full flex items-center px-4 shadow-lg">
           <IoSearchOutline className="text-gray-500 text-[22px]" />
 
@@ -124,7 +122,6 @@ const SideBar = () => {
         </form>
       </div>
 
-      {/* Users List */}
       <div className="h-[calc(100vh-220px)] overflow-y-auto p-3 ">
         {searching ? (
           <div className="text-center text-gray-500 mt-10">Searching...</div>
